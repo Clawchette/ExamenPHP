@@ -14,17 +14,17 @@
         <li class="nav-item active">
         <a class="nav-link" href="administration.experience.php">Expériences</a>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
         <a class="nav-link" href="administration.education.php">Education</a>
         </li>
-        <li class="nav-item">
+        <!--<li class="nav-item">
         <a class="nav-link" href="administration.competences.php">Compétences</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="administration.interets.php">Intérets</a>
-        </li>
+        </li> -->
         <li class="nav-item">
         <a class="nav-link" href="administration.recompenses.php">Récompenses</a>
-        </li> -->
+        </li>
     </ul>
 </nav>

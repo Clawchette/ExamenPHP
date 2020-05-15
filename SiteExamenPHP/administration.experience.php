@@ -86,22 +86,22 @@ require_once("inc/header.inc.php"); ?>
 
                 <div class="form-group">
                     <label for="emploi">Emploi</label>
-                    <input type="texte" class="form-control" id="emploi" name="emploi" placeholder="Votre emploi dans l'entreprise..." maxlength = "40" value="<?php echo $modif->emploi; ?>">
+                    <input type="texte" class="form-control" id="emploi" name="emploi" maxlength = "40" value="<?php echo $modif->emploi; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="periode">Période</label>
-                    <input type="texte" class="form-control" id="periode" name="periode" placeholder="De <Mois Année> à <Mois Année>" maxlength = "40" value="<?php echo $modif->periode; ?>">
+                    <input type="texte" class="form-control" id="periode" name="periode" maxlength = "40" value="<?php echo $modif->periode; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="entreprise">Entreprise</label>
-                    <input type="texte" class="form-control" id="entreprise" name="entreprise" placeholder="Nom de l'entreprise pour laquelle vous avez travaillez..." maxlength = "40" value="<?php echo $modif->entreprise; ?>">
+                    <input type="texte" class="form-control" id="entreprise" name="entreprise" maxlength = "40" value="<?php echo $modif->entreprise; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="jobdescription">Description</label>
-                    <textarea rows="10" class="form-control" id="jobdescription" name="jobdescription" placeholder="Description de ce que cette expérience vous a apporté..."><?php echo $modif->jobdescription; ?></textarea>
+                    <textarea rows="10" class="form-control" id="jobdescription" name="jobdescription"><?php echo $modif->jobdescription; ?></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Modifier l'expérience</button>

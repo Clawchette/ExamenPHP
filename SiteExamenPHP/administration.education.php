@@ -86,22 +86,22 @@ require_once("inc/header.inc.php"); ?>
 
                 <div class="form-group">
                     <label for="ecole">Ecole</label>
-                    <input type="texte" class="form-control" id="ecole" name="ecole" placeholder="L'école dans laquelle vous avez étudié..." maxlength = "40" value="<?php echo $modif->ecole; ?>">
+                    <input type="texte" class="form-control" id="ecole" name="ecole" maxlength = "40" value="<?php echo $modif->ecole; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="periode">Période</label>
-                    <input type="texte" class="form-control" id="periode" name="periode" placeholder="De <Mois Année> à <Mois Année>" maxlength = "40" value="<?php echo $modif->periode; ?>">
+                    <input type="texte" class="form-control" id="periode" name="periode" maxlength = "40" value="<?php echo $modif->periode; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="formation">Formation</label>
-                    <input type="texte" class="form-control" id="formation" name="formation" placeholder="Le nom de votre formation..." maxlength = "40" value="<?php echo $modif->formation; ?>">
+                    <input type="texte" class="form-control" id="formation" name="formation" maxlength = "40" value="<?php echo $modif->formation; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="specialisation">Spécialisation</label>
-                    <input type="texte" class="form-control" id="specialisation" name="specialisation" placeholder="Si vous aviez une spécialisation..." maxlength = "40" value="<?php echo $modif->jobdescription; ?>">
+                    <input type="texte" class="form-control" id="specialisation" name="specialisation" maxlength = "40" value="<?php echo $modif->jobdescription; ?>">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Modifier la formation</button>

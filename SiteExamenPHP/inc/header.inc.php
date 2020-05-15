@@ -8,22 +8,22 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <!-- <li class="nav-item active">
+        <li class="nav-item active">
         <a class="nav-link" href="administration.apropos.php">A Propos</a>
-        </li> -->
+        </li>
         <li class="nav-item active">
         <a class="nav-link" href="administration.experience.php">Expériences</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
         <a class="nav-link" href="administration.education.php">Education</a>
         </li>
-        <!--<li class="nav-item">
+        <!--<li class="nav-item active">
         <a class="nav-link" href="administration.competences.php">Compétences</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="administration.interets.php">Intérets</a>
-        </li> -->
-        <li class="nav-item">
+        </li>-->
+        <li class="nav-item active">
+        <a class="nav-link" href="administration.interets.php">Intérêts</a>
+        </li> 
+        <li class="nav-item active">
         <a class="nav-link" href="administration.recompenses.php">Récompenses</a>
         </li>
     </ul>

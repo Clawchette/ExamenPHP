@@ -101,7 +101,7 @@ if($admin=="active"){ ?>?>
         //permet le choix de la récompense à supprimer
         if(empty($_GET["suppr"])){              
             while ($recompense = $liste->fetch(PDO::FETCH_OBJ)) { ?>
-                <a href="administration.recompenses.php?choix=supprimer&suppr=<?php echo $recompense->id_recompense; ?>"><?php echo $recompense->emploi . " chez " . $recompense->entreprise; ?></a>  
+                <a href="administration.recompenses.php?choix=supprimer&suppr=<?php echo $recompense->id_recompense; ?>"><?php echo $recompense->recompense; ?></a>  
             <?php } ?>
             <br>
             <a href="administration.recompenses.php" class="btn btn-primary">Retour</a>

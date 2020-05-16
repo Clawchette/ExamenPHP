@@ -28,7 +28,7 @@ if($admin=="active"){ ?>?>
         <form method="POST" action="">
             <div class="form-group">
                 <label for="devweb">Ajout d'une icône</label>
-                <input type="texte" class="form-control" id="devweb" name="devweb" placeholder="Ex: fab fa-html5" maxlength = "40">
+                <input type="texte" class="form-control" id="devweb" name="devweb" placeholder="Entrez le contenu de la class de l'icône. Ex: fab fa-html5" maxlength = "40">
                 <br><p>L'icône doit provenir de <a href="https://fontawesome.com/">FontAwesome</a> ou <a href="http://konpa.github.io/devicon/">Devicon</a>.</p>
             </div>
             <br><button type="submit" class="btn btn-primary">Ajouter</button>    
@@ -80,7 +80,7 @@ if($admin=="active"){ ?>?>
         <form method="POST" action="">
             <div class="form-group">
                 <label for="devlog">Ajout d'une icône</label>
-                <input type="texte" class="form-control" id="devlog" name="devlog" placeholder="Ex: devicon-csharp-line" maxlength = "40">
+                <input type="texte" class="form-control" id="devlog" name="devlog" placeholder="Entrez le contenu de la class de l'icône. Ex: devicon-csharp-line" maxlength = "40">
                 <br><p>L'icône doit provenir de <a href="https://fontawesome.com/">FontAwesome</a> ou <a href="http://konpa.github.io/devicon/">Devicon</a>.</p>
             </div>
             <br><button type="submit" class="btn btn-primary">Ajouter</button>    

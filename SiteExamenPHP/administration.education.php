@@ -140,7 +140,7 @@ if($admin=="active"){ ?>?>
         //permet le choix de la formation à supprimer
         if(empty($_GET["suppr"])){              
             while ($education = $liste->fetch(PDO::FETCH_OBJ)) { ?>
-                <a href="administration.education.php?choix=supprimer&suppr=<?php echo $education->id_education; ?>"><?php echo $education->emploi . " chez " . $education->entreprise; ?></a>  
+                <a href="administration.education.php?choix=supprimer&suppr=<?php echo $education->id_education; ?>"><?php echo $education->formation . " à " . $education->ecole; ?></a>  
             <?php } ?>
             <br>
             <a href="administration.education.php" class="btn btn-primary">Retour</a>

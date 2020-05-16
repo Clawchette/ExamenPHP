@@ -15,9 +15,9 @@
         <li class="nav-item active">
         <a class="nav-link" href="administration.education.php">Education</a>
         </li>
-        <!--<li class="nav-item active">
+        <li class="nav-item active">
         <a class="nav-link" href="administration.competences.php">Compétences</a>
-        </li>-->
+        </li>
         <li class="nav-item active">
         <a class="nav-link" href="administration.interets.php">Intérêts</a>
         </li> 

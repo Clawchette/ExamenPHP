@@ -5,7 +5,7 @@ $apropos = $resultapropos->fetch(PDO::FETCH_OBJ)?>
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none"><?php echo $apropos->prenom . " " . $apropos->nom; ?></span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<?php echo $apropos->cheminimg; ?>" alt="ma photo">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<?php echo $apropos->cheminphoto; ?>" alt="ma photo">
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,60 +127,51 @@ $apropos = $resultapropos->fetch(PDO::FETCH_OBJ)?>
       <div class="w-100">
         <h2 class="mb-5">Compétences</h2>
 
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+        <div class="subheading mb-3">Langages de développement web</div>
         <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-html5"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-css3-alt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-js-square"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-angular"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-react"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node-js"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-sass"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-less"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-wordpress"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-gulp"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-grunt"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-npm"></i>
-          </li>
+
+          <?php
+          $devweb = $pdo->query("SELECT * FROM competencesweb"); 
+
+          if(!empty($devweb)){              
+            while ($compweb = $devweb->fetch(PDO::FETCH_OBJ)) { ?>
+              <li class="list-inline-item">
+                <i class="<?php echo $compweb->competenceweb; ?>"></i>
+              </li>
+            <?php }
+          } ?>
         </ul>
 
-        <div class="subheading mb-3">Workflow</div>
+        <div class="subheading mb-3">Langages de développement logiciel</div>
+        <ul class="list-inline dev-icons">
+
+          <?php
+          $devlog = $pdo->query("SELECT * FROM competenceslog"); 
+
+          if(!empty($devlog)){              
+            while ($complog = $devlog->fetch(PDO::FETCH_OBJ)) { ?>
+              <li class="list-inline-item">
+                <i class="<?php echo $complog->competencelog; ?>"></i>
+              </li>
+            <?php } 
+          } ?>
+        </ul>
+
+
+        <div class="subheading mb-3">Langues</div>
         <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Mobile-First, Responsive Design</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Browser Testing &amp; Debugging</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Cross Functional Teams</li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Agile Development &amp; Scrum</li>
+
+        <?php
+          $langue = $pdo->query("SELECT * FROM competenceslang"); 
+
+          if(!empty($langue)){              
+            while ($complang = $langue->fetch(PDO::FETCH_OBJ)) { ?>
+              <li>
+                <i class="fa-li fa fa-check"></i>
+                <?php echo $complang->competencelang . " : " . $complang->nivlang; ?>
+              </li>
+            <?php } 
+          }?>
         </ul>
       </div>
     </section>

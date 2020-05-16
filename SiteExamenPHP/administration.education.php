@@ -1,5 +1,6 @@
 <?php require_once("inc/head.inc.php"); 
-require_once("inc/header.inc.php"); ?>
+require_once("inc/identification.inc.php"); 
+if($admin=="active"){ ?>?>
     <br><br><br>
     <h2>Education</h2>
     <br>
@@ -152,5 +153,5 @@ require_once("inc/header.inc.php"); ?>
 
         <br><br>
     <?php } 
-
+}
 require_once("inc/footer.inc.php"); ?>

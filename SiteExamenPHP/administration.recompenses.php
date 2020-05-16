@@ -1,5 +1,6 @@
 <?php require_once("inc/head.inc.php"); 
-require_once("inc/header.inc.php"); ?>
+require_once("inc/identification.inc.php"); 
+if($admin=="active"){ ?>?>
     <br><br><br>
     <h2>Récompenses & Certifications</h2>
     <br>
@@ -67,7 +68,7 @@ require_once("inc/header.inc.php"); ?>
 
                 <div class="form-group">
                     <label for="recompense">Récompense</label>
-                    <input type="texte" class="form-control" id="recompense" name="recompense" placeholder="Nom de la récompense ou certification que vous avez obtenu..." maxlength = "100" value="<?php echo $modif->ecole; ?>">
+                    <input type="texte" class="form-control" id="recompense" name="recompense" maxlength = "100" value="<?php echo $modif->ecole; ?>">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Modifier la récompense</button>
@@ -113,5 +114,5 @@ require_once("inc/header.inc.php"); ?>
 
         <br><br>
     <?php } 
-
+}
 require_once("inc/footer.inc.php"); ?>

@@ -1,6 +1,7 @@
 <?php require_once("inc/head.inc.php");
 $resultapropos = $pdo->query("SELECT * FROM apropos WHERE id_apropos='1'"); 
 $apropos = $resultapropos->fetch(PDO::FETCH_OBJ)?>
+<body id="page-top">
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none"><?php echo $apropos->prenom . " " . $apropos->nom; ?></span>

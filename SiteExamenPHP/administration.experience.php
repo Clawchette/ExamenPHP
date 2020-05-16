@@ -106,7 +106,7 @@ if($admin=="active"){ ?>?>
                 </div>
 
                 <button type="submit" class="btn btn-primary">Modifier l'expérience</button>
-
+                <br>
             </form>
             <?php if(!empty($_POST)){
 

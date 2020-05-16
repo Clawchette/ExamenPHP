@@ -220,6 +220,7 @@ if($admin=="active"){ ?>?>
         if(empty($_GET["suppr"])){              
             while ($langue = $liste->fetch(PDO::FETCH_OBJ)) { ?>
                 <a href="administration.competences.php?choix=supprimerlang&suppr=<?php echo $langue->id_complang; ?>"><?php echo $langue->competencelang; ?></a>  
+                <br>
             <?php } ?>
             <br>
             <a href="administration.competences.php" class="btn btn-primary">Retour</a>

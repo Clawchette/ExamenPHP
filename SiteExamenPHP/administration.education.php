@@ -27,7 +27,7 @@ if($admin=="active"){ ?>?>
 
             <div class="form-group">
                 <label for="periode">Période</label>
-                <input type="texte" class="form-control" id="periode" name="periode" placeholder="De <Mois Année> à <Mois Année>" maxlength = "40">
+                <input type="texte" class="form-control" id="periode" name="periode" placeholder="De <Mois Année> à <Mois Année>" maxlength = "100">
             </div>
 
             <div class="form-group">
@@ -37,7 +37,7 @@ if($admin=="active"){ ?>?>
 
             <div class="form-group">
                 <label for="specialisation">Spécialisation</label>
-                <input type="texte" class="form-control" id="specialisation" name="specialisation" placeholder="Si vous aviez une spécialisation..." maxlength = "40">
+                <input type="texte" class="form-control" id="specialisation" name="specialisation" placeholder="Si vous aviez une spécialisation..." maxlength = "100">
             </div>
 
             <button type="submit" class="btn btn-primary">Ajouter une formation</button>
@@ -92,7 +92,7 @@ if($admin=="active"){ ?>?>
 
                 <div class="form-group">
                     <label for="periode">Période</label>
-                    <input type="texte" class="form-control" id="periode" name="periode" maxlength = "40" value="<?php echo $modif->periode; ?>">
+                    <input type="texte" class="form-control" id="periode" name="periode" maxlength = "100" value="<?php echo $modif->periode; ?>">
                 </div>
 
                 <div class="form-group">
@@ -102,11 +102,11 @@ if($admin=="active"){ ?>?>
 
                 <div class="form-group">
                     <label for="specialisation">Spécialisation</label>
-                    <input type="texte" class="form-control" id="specialisation" name="specialisation" maxlength = "40" value="<?php echo $modif->jobdescription; ?>">
+                    <input type="texte" class="form-control" id="specialisation" name="specialisation" maxlength = "100" value="<?php echo $modif->specialisation; ?>">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Modifier la formation</button>
-
+                <br>
             </form>
             <?php if(!empty($_POST)){
 
@@ -141,6 +141,7 @@ if($admin=="active"){ ?>?>
         if(empty($_GET["suppr"])){              
             while ($education = $liste->fetch(PDO::FETCH_OBJ)) { ?>
                 <a href="administration.education.php?choix=supprimer&suppr=<?php echo $education->id_education; ?>"><?php echo $education->formation . " à " . $education->ecole; ?></a>  
+                <br>
             <?php } ?>
             <br>
             <a href="administration.education.php" class="btn btn-primary">Retour</a>

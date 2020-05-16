@@ -22,5 +22,6 @@
   <link href="css/resume.min.css" rel="stylesheet">
 
 </head>
+<?php $pdo = new PDO("mysql:host=localhost;dbname=dbexamenphp","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));?> 
 
 <body id="page-top">

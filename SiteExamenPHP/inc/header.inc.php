@@ -1,5 +1,3 @@
-<?php $pdo = new PDO("mysql:host=localhost;dbname=dbexamenphp","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));?> 
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="administration.php">Administration</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">

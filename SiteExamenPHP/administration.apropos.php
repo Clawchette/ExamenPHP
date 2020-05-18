@@ -7,7 +7,7 @@ if($admin=="active"){ ?>
     $result = $pdo->query("SELECT * FROM apropos WHERE id_apropos='1'"); 
     $modif = $result->fetch(PDO::FETCH_OBJ)?>
 
-    <form method="POST" action="">
+    <form method="POST" action="" enctype='multipart/form-data'>
         <div class="form-group">
 
             <label for="prenom">Prénom</label>
@@ -46,8 +46,8 @@ if($admin=="active"){ ?>
         </div>
 
         <div class="form-group">
-            <label for="cheminphoto">Chemin vers la photo</label>
-            <input type="texte" class="form-control" id="cheminphoto" name="cheminphoto" maxlength = "50" value="<?php echo $modif->cheminphoto; ?>">
+            <label for="img">Chemin vers la photo</label>
+            <input type="file" class="form-control-file" id="img" name="img[]">
         </div>
 
         <div class="form-group">
@@ -71,6 +71,18 @@ if($admin=="active"){ ?>
     </form>
     <?php
     if(!empty($_POST)){
+
+        $name = "";
+        if (!empty($_FILES)) {
+            foreach ($_FILES["img"]["error"] as $key => $error) {
+                if ($error == UPLOAD_ERR_OK) {
+                    $tmp_name = $_FILES["img"]["tmp_name"][$key];
+                    $name = basename($_FILES["img"]["name"][$key]);
+                    move_uploaded_file($tmp_name, "img/$name");
+                }
+            }
+        }
+
         $_POST["prenom"] = htmlentities($_POST["prenom"], ENT_QUOTES);
         $_POST["nom"] = htmlentities($_POST["nom"], ENT_QUOTES);
         $_POST["rue"] = htmlentities($_POST["rue"], ENT_QUOTES);
@@ -79,7 +91,6 @@ if($admin=="active"){ ?>
         $_POST["telephone"] = htmlentities($_POST["telephone"], ENT_QUOTES);
         $_POST["email"] = htmlentities($_POST["email"], ENT_QUOTES);
         $_POST["description"] = htmlentities($_POST["description"], ENT_QUOTES);
-        $_POST["cheminphoto"] = htmlentities($_POST["cheminphoto"], ENT_QUOTES);
         $_POST["lienlinkedin"] = htmlentities($_POST["lienlinkedin"], ENT_QUOTES);
         $_POST["liengithub"] = htmlentities($_POST["liengithub"], ENT_QUOTES);
         $_POST["lientwitter"] = htmlentities($_POST["lientwitter"], ENT_QUOTES);
@@ -87,7 +98,7 @@ if($admin=="active"){ ?>
 
         $requeteSQL = "UPDATE apropos SET ";
         $requeteSQL .="prenom='$_POST[prenom]', nom='$_POST[nom]', rue='$_POST[rue]', ville='$_POST[ville]', codepostal='$_POST[codepostal]', ";
-        $requeteSQL .="telephone='$_POST[telephone]', email='$_POST[email]', description='$_POST[description]', cheminphoto='$_POST[cheminphoto]', lienlinkedin='$_POST[lienlinkedin]', ";
+        $requeteSQL .="telephone='$_POST[telephone]', email='$_POST[email]', description='$_POST[description]', cheminphoto='img/$name', lienlinkedin='$_POST[lienlinkedin]', ";
         $requeteSQL .="liengithub='$_POST[liengithub]', lientwitter='$_POST[lientwitter]', lienfacebook='$_POST[lienfacebook]' ";
         $requeteSQL .="WHERE id_apropos='1'";
         $pdo->exec($requeteSQL);

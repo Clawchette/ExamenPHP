@@ -12,7 +12,7 @@ $apropos = $resultapropos->fetch(PDO::FETCH_OBJ)?>
       <span class="d-block d-lg-none"><?php echo $apropos->prenom . " " . $apropos->nom; ?></span>
       
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="<?php echo $apropos->cheminphoto; ?>" alt="ma photo">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/<?php echo $apropos->cheminphoto; ?>" alt="ma photo">
       </span>
 
     </a>

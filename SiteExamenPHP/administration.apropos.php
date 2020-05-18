@@ -89,7 +89,7 @@ if($admin=="active"){ ?>
                 <input type="texte" class="form-control" id="lienfacebook" name="lienfacebook" maxlength = "100" value="<?php echo $modif->lienfacebook; ?>">
             </div>
 
-            <button type="submit" class="btn btn-primary">Modifier les intérêts</button>
+            <button type="submit" class="btn btn-primary">Modifier ma présentation</button>
 
         </form>
         <br>
@@ -109,6 +109,11 @@ if($admin=="active"){ ?>
             }
         }
         // ^Vérifie que le fichier est bon, l'enregistre dans le dossier img/ et enregistre son nom dans $name
+        
+        else{
+            $name=$modif->cheminphoto;
+        }
+        // ^Si la photo n'a pas été modifiée, la précédente est reprise
 
         $_POST["prenom"] = htmlentities($_POST["prenom"], ENT_QUOTES);
         $_POST["nom"] = htmlentities($_POST["nom"], ENT_QUOTES);
@@ -130,7 +135,7 @@ if($admin=="active"){ ?>
 
         $requeteSQL = "UPDATE apropos SET ";
         $requeteSQL .="prenom='$_POST[prenom]', nom='$_POST[nom]', rue='$_POST[rue]', ville='$_POST[ville]', codepostal='$_POST[codepostal]', ";
-        $requeteSQL .="telephone='$_POST[telephone]', email='$_POST[email]', description='$_POST[description]', cheminphoto='img/$name', lienlinkedin='$_POST[lienlinkedin]', ";
+        $requeteSQL .="telephone='$_POST[telephone]', email='$_POST[email]', description='$_POST[description]', cheminphoto='$name', lienlinkedin='$_POST[lienlinkedin]', ";
         $requeteSQL .="liengithub='$_POST[liengithub]', lientwitter='$_POST[lientwitter]', lienfacebook='$_POST[lienfacebook]' ";
         $requeteSQL .="WHERE id_apropos='1'";
 

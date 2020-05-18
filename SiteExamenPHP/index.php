@@ -15,13 +15,13 @@ $apropos = $resultapropos->fetch(PDO::FETCH_OBJ)?>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">A Propos</a>
+          <a class="nav-link js-scroll-trigger" href="#about">À Propos</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#experience">Expérience</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">éducation</a>
+          <a class="nav-link js-scroll-trigger" href="#education">Éducation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#skills">Compétences</a>
@@ -99,7 +99,7 @@ $apropos = $resultapropos->fetch(PDO::FETCH_OBJ)?>
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
       <div class="w-100">
-        <h2 class="mb-5">éducation</h2>
+        <h2 class="mb-5">Éducation</h2>
 
         <?php
         $education = $pdo->query("SELECT * FROM education"); 

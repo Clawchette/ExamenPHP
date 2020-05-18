@@ -14,7 +14,7 @@
             <a class="nav-link" href="administration.experience.php">Expériences</a>
             </li>
             <li class="nav-item <?php echo $admin;?>">
-            <a class="nav-link" href="administration.education.php">Education</a>
+            <a class="nav-link" href="administration.education.php">Éducation</a>
             </li>
             <li class="nav-item <?php echo $admin;?>">
             <a class="nav-link" href="administration.competences.php">Compétences</a>
@@ -26,4 +26,14 @@
             <a class="nav-link" href="administration.recompenses.php">Récompenses</a>
             </li>
         </ul>
+
+        <form method="post" action="">
+            <input type="hidden" name="goClearSession" value="1" >
+            <input type="submit" value="Déconnexion" class="btn btn-danger btn-lg btn-block">
+        </form>
+        <?php if(!empty($_POST["goClearSession"])) {
+            $_SESSION = array();
+            header("Location:administration.php");
+        }
+        ?>
     </nav>

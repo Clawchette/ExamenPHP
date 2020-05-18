@@ -1,16 +1,20 @@
 <?php require_once("inc/head.inc.php"); 
 require_once("inc/identification.inc.php"); 
+
 if($admin=="active"){ ?>?>
+
     <br><br><br>
     <h2>Education</h2>
     <br>
 
-    <?php
-    if(empty($_GET)){ ?>
+    <?php if(empty($_GET)){ ?>
+
         <a href="administration.education.php?choix=ajouter" class="btn btn-primary btn-lg">Ajouter</a>
         <a href="administration.education.php?choix=modifier" class="btn btn-primary btn-lg">Modifier</a>
         <a href="administration.education.php?choix=supprimer" class="btn btn-primary btn-lg">Supprimer</a>
+
     <?php } 
+
     else if($_GET["choix"]=="ajouter"){?>
 
         <!-- ------------------------------------------------------------------------------------------- -->
@@ -43,10 +47,11 @@ if($admin=="active"){ ?>?>
             <button type="submit" class="btn btn-primary">Ajouter une formation</button>
             
         </form>
+
         <br>
         <a href="administration.education.php" class="btn btn-primary">Retour</a>
-        <br>
-        <br><br>
+        <br><br><br>
+
         <?php if(!empty($_POST)){
 
             $_POST["ecole"] = htmlentities($_POST["ecole"], ENT_QUOTES);
@@ -58,6 +63,7 @@ if($admin=="active"){ ?>?>
             $requeteSQL .= " VALUE ('$_POST[ecole]', '$_POST[periode]', '$_POST[formation]', '$_POST[specialisation]')";
             $pdo->exec($requeteSQL);
             header("Location:administration.education.php?choix=ajouter");
+
         } 
     }
 
@@ -68,21 +74,23 @@ if($admin=="active"){ ?>?>
         <h3>Modification d'une formation</h3>
         <!-- ------------------------------------------------------------------------------------------- -->
 
-        <?php 
-        $liste = $pdo->query("SELECT * FROM education"); 
+        <?php $liste = $pdo->query("SELECT * FROM education"); 
 
-        //permet le choix de la formation à modifier
-        if(empty($_GET["modif"])){              
+        if(empty($_GET["modif"])){ 
+
             while ($education = $liste->fetch(PDO::FETCH_OBJ)) { ?>
+
                 <a href="administration.education.php?choix=modifier&modif=<?php echo $education->id_education; ?>"><?php echo $education->formation . " à " . $education->ecole; ?></a>  
                 <br>
+
             <?php }
         }
 
-        //affiche la formation choisie dans un formulaire pour la modifier
         else if(!empty($_GET["modif"])){ 
+
             $result = $pdo->query("SELECT * FROM education WHERE id_education='$_GET[modif]'"); 
             $modif = $result->fetch(PDO::FETCH_OBJ)?>
+
             <form method="POST" action="">
 
                 <div class="form-group">
@@ -105,9 +113,10 @@ if($admin=="active"){ ?>?>
                     <input type="texte" class="form-control" id="specialisation" name="specialisation" maxlength = "100" value="<?php echo $modif->specialisation; ?>">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Modifier la formation</button>
-                <br>
+                <button type="submit" class="btn btn-primary">Modifier la formation</button><br>
+
             </form>
+
             <?php if(!empty($_POST)){
 
                 $_POST["ecole"] = htmlentities($_POST["ecole"], ENT_QUOTES);
@@ -122,10 +131,9 @@ if($admin=="active"){ ?>?>
                 header("Location:administration.education.php?choix=modifier");
             } 
         } ?>
-        <br>
-        <a href="administration.education.php" class="btn btn-primary">Retour</a>
-        <br>
-        <br><br>
+
+        <br><a href="administration.education.php" class="btn btn-primary">Retour</a><br><br><br>
+    
     <?php }
 
     else if($_GET["choix"]=="supprimer"){ ?>
@@ -134,25 +142,30 @@ if($admin=="active"){ ?>?>
         <h3>Suppression d'une formation</h3>
         <!-- ------------------------------------------------------------------------------------------- -->
 
-        <?php 
-        $liste = $pdo->query("SELECT * FROM education"); 
+        <?php $liste = $pdo->query("SELECT * FROM education"); 
 
-        //permet le choix de la formation à supprimer
-        if(empty($_GET["suppr"])){              
+        if(empty($_GET["suppr"])){   
+
             while ($education = $liste->fetch(PDO::FETCH_OBJ)) { ?>
-                <a href="administration.education.php?choix=supprimer&suppr=<?php echo $education->id_education; ?>"><?php echo $education->formation . " à " . $education->ecole; ?></a>  
-                <br>
+
+                <a href="administration.education.php?choix=supprimer&suppr=<?php echo $education->id_education; ?>"><?php echo $education->formation . " à " . $education->ecole; ?></a>  <br>
+
             <?php } ?>
-            <br>
-            <a href="administration.education.php" class="btn btn-primary">Retour</a>
-            <br>
+
+            <br><a href="administration.education.php" class="btn btn-primary">Retour</a><br>
+        
         <?php } 
+
         else{
+
             $pdo->exec("DELETE FROM education WHERE id_education = '$_GET[suppr]'");
             header("Location:administration.education.php?choix=supprimer");
+
         }?>
 
         <br><br>
+
     <?php } 
 }
+
 require_once("inc/footer.inc.php"); ?>

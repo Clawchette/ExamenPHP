@@ -1,9 +1,13 @@
 <?php require_once("head.inc.php");
+
 session_start();
+
 $result = $pdo->query("SELECT * FROM identification WHERE id_admin='1'"); 
 $adminID = $result->fetch(PDO::FETCH_OBJ);
+
 if(!($_SESSION["pseudo"]==$adminID->pseudo && $_SESSION["mdp"]==$adminID->mdp)){
     $admin="inactive"; ?>
+
     <br><br><br>
     <h2>Authentification requise !</h2>
     <br>
@@ -31,8 +35,10 @@ if(!($_SESSION["pseudo"]==$adminID->pseudo && $_SESSION["mdp"]==$adminID->mdp)){
     }
 
 }
+
 else{
     $admin="active";
 }
+
 require_once("inc/header.inc.php");
 ?>

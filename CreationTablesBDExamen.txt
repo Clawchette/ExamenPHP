@@ -57,7 +57,7 @@ CREATE TABLE apropos(
 );
 
 INSERT INTO apropos (id_apropos, prenom, nom, rue, ville, codepostal, telephone, email, description, cheminphoto, lienlinkedin, liengithub, lientwitter, lienfacebook) 
-VALUE ("1", "Marie", "Gonzalez", "12 Rue Anatole France", "Nanterre", "92 000", "01 41 20 69 57", "marie.gonzalez@ynov.com", "Je souhaite un jour faire de ma passion pour l'informatique et le développement mon métier.", "img/profile.jpg", "linkedin.com/school/ynov-paris", "github.com/Clawchette/ExamenPHP", "twitter.com/parisynovcampus", "facebook.com/parisynovcampus");
+VALUE ("1", "Marie", "Gonzalez", "12 Rue Anatole France", "Nanterre", "92 000", "01 41 20 69 57", "marie.gonzalez@ynov.com", "Je souhaite un jour faire de ma passion pour l'informatique et le développement mon métier.", "img/profile.jpg", "https://www.linkedin.com/school/ynov-paris", "https://www.github.com/Clawchette/ExamenPHP", "https://www.twitter.com/parisynovcampus", "https://www.facebook.com/parisynovcampus");
 
 
 
